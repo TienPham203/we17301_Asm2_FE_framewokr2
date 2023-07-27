@@ -1,0 +1,488 @@
+ .containers {
+     max-width: 100%;
+     width: 1580px;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     font-weight: 400;
+     margin: 0 auto;
+ }
+
+ .input input {
+
+     outline: none;
+     border-radius: 20px;
+     backdrop-filter: blur(5px);
+     padding: 10px 20px;
+     background-color: transparent;
+     background-color: #a19c9c7C;
+     width: 400px;
+     color: white;
+ }
+
+ .nav {
+
+     z-index: 1;
+
+ }
+
+ .menu li a {
+     background-image: linear-gradient(to right,
+             orange,
+             rgb(196, 166, 110) 50%,
+             #ffff 50%);
+     background-size: 200% 100%;
+     background-position: -100%;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     transition: all 0.3s ease-in-out;
+ }
+
+ .menu li a::before {
+     content: '';
+     background: orange;
+     display: block;
+     position: absolute;
+     bottom: -3px;
+     left: 0;
+     width: 0;
+     height: 3px;
+
+ }
+
+ .menu li a:hover {
+     background-position: 0;
+ }
+
+
+
+ .header {
+     height: 890px;
+ }
+
+ .header-bg {
+     background-color: #1B1B1B;
+     color: white;
+
+ }
+
+ .silder {
+     position: relative;
+     width: 1580px;
+     height: 700px;
+
+     margin: 0 auto;
+ }
+
+
+ .list img {
+     width: 1580px;
+     height: 100%;
+     object-fit: cover;
+ }
+
+
+
+
+
+ .banner-text {
+     position: absolute;
+     margin: 0 auto;
+     top: 40%;
+     left: 10%;
+
+ }
+
+ .banner-text h3 {
+     font-size: 60px;
+     font-weight: bold;
+ }
+
+ .banner-text h4 {
+     font-size: 45px;
+     font-weight: bold;
+ }
+
+ .content {
+     margin: 0 auto;
+     background-color: #0B111F;
+     padding: 100px 0 0 0;
+ }
+
+ .list-sv {
+     justify-content: space-around;
+     display: flex;
+     align-items: center;
+ }
+
+ .item-sv {
+     padding: 40px 40px;
+     color: white;
+     background-color: #171F32;
+     height: 200px;
+     border-radius: 20px;
+     text-align: center;
+     /* position: relative; */
+ }
+
+ .item-sv .icon {
+     background-color: #ffffff;
+     color: #EB3335;
+     display: inline-block;
+     padding: 20px 27px 20px 27px;
+     border-radius: 50%;
+     font-size: 24px;
+     /* position: absolute; */
+     /* top: -25%; */
+     transform: translate(0, -80px);
+ }
+
+
+
+ .item-sv .text h3 {
+     /* transform: translate(40px, -95px); */
+     font-size: 20px;
+     text-align: center;
+ }
+
+ .item-sv .text p {
+     color: gray;
+ }
+
+ .slogan {
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     margin-top: 70px;
+
+ }
+
+ .slogan-text {
+     width: 600px;
+     margin-left: 100px
+ }
+
+ .slogan .title {
+     font-size: 50px;
+     width: 500px
+ }
+
+ .slogan-text button {
+     margin-top: 100px;
+     padding: 10px 20px;
+     background-color: #EB3335;
+     border-radius: 30px;
+     font-weight: bold;
+ }
+
+ .slogan .auth {
+     margin-top: 40px;
+     display: flex;
+     align-items: center;
+
+ }
+
+ .slogan .auth img {
+     width: 100px;
+     border-radius: 50%;
+ }
+
+ .slogan .auth .name-auth {
+     margin-left: 30px;
+ }
+
+ .slogan .auth .name-auth h2 {
+     font-size: 20px;
+     font-weight: bold;
+ }
+
+ .slogan .auth .name-auth p {
+     color: gray;
+ }
+
+ .product {
+     color: white;
+ }
+
+ .product .list {
+     display: grid;
+     grid-template-columns: auto auto auto;
+     justify-content: space-around;
+ }
+
+ .product .list .item {
+     height: 500px;
+     background-color: #081021;
+     margin-bottom: 40px;
+     border-radius: 20px;
+
+ }
+
+ .product .list .small-item .sale-off {
+     width: 55px;
+     padding: 0px 5px;
+     text-align: right;
+ }
+
+ .product .list .small-item {
+     width: 400px;
+     text-align: left;
+     background-color: #252a36;
+
+     border-radius: 20px;
+
+     padding: 20px 20px;
+     transition: ease 0.5s;
+
+
+ }
+
+ .product .list .small-item:hover img {
+
+     transition: ease 0.5s;
+     transform: scale(1.25);
+ }
+
+ .product .list .small-item del {
+     color: #EB3335;
+     font-size: 15px;
+ }
+
+ .product .list .small-item .price {
+     font-size: 20px;
+ }
+
+ .product .list .small-item .button {
+     font-weight: bold;
+     border: none;
+     background: none;
+     transition: all 0.5s;
+ }
+
+ .product .list .small-item .button button:hover {
+     background-color: #EB3335;
+     transition: all 0.5s;
+ }
+
+
+ .product .list .small-item .statr {
+     display: flex;
+     padding: 10px 0px;
+ }
+
+ .product .list .item a {
+     font-size: 20px;
+ }
+
+ .product .title {
+     font-size: 80px;
+     text-align: center;
+     font-weight: 400;
+     font-family: 'Borel';
+     /* font-weight: bold; */
+ }
+
+ .product .list .small-item .img {
+     transition: all 0.5;
+     width: 350px;
+     height: 350px;
+
+ }
+
+ .product .list .small-item .back a {
+     text-decoration: none;
+     color: white;
+ }
+
+ .mkt {
+     display: flex;
+
+
+     margin: auto;
+     justify-content: space-between;
+
+ }
+
+ .mkt .item {
+
+     /* width: 600px; */
+     color: white;
+     /* border: 1px solid gray; */
+     margin: 0 auto;
+     /* background-image: url('https://prestashop17.joommasters.com/koganic/themes/koganic/assets/img/sushi/banner-1.png'); */
+     height: 290px;
+     margin-bottom: 50px;
+     border-radius: 20px;
+     overflow: hidden;
+
+ }
+
+ .mkt .item img {
+     transition: all 0.5s;
+
+ }
+
+ .mkt .item:hover img {
+     transform: scale(1.25);
+     transition: all 0.5s;
+ }
+
+ .mkt .item:nth-child(1),
+ .mkt .item:nth-child(2) {
+     margin-right: 20px;
+ }
+
+ .mkt .item .text {
+     transform: translate(-20px, -185px);
+     text-align: right;
+     /* position: absolute; */
+     z-index: 1;
+ }
+
+ .mkt .item .text .discount {
+     color: orange;
+     font-size: 25px;
+ }
+
+ .mkt .item .text .discount span {
+     font-size: 35px;
+ }
+
+ .mkt .item .text .title {
+     font-family: 'Borel';
+     font-size: 40px;
+ }
+
+
+
+ .mkt .item .button {
+     background: none;
+     padding: 10px;
+     border-radius: 20px;
+     border: 2px solid gray
+ }
+
+ .mkt .item .button:hover {
+     background-color: #EB3335;
+
+ }
+
+ /* .mkt .item:hover {
+     transform: scale(1.25);
+ } */
+
+ .uudai {
+
+     height: 250px;
+     color: white;
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+     object-fit: cover;
+     background-image: url('https://prestashop17.joommasters.com/koganic/themes/koganic/assets/img/sushi/newsletter-bg.jpg');
+     /* margin-bottom: 50px; */
+     align-items: center;
+
+ }
+
+ .uudai h1 {
+     font-size: 33px;
+     color: white;
+     font-family: 'Borel';
+ }
+
+ .uudai button {
+     outline: none;
+     border-radius: 20px;
+     border: 2px solid white;
+     /* backdrop-filter: blur(5px); */
+     padding: 10px 20px;
+     background-color: transparent;
+     /* background-color: #a19c9c7C; */
+     width: 130px;
+     color: white;
+     font-weight: bold;
+     font-size: 20px;
+ }
+
+ .uudai button:hover {
+     background-color: #EB3335;
+ }
+
+ .uudai i {
+     margin-left: 10px;
+     font-size: 30px;
+ }
+
+ .uudai i:nth-child(2) {
+     color: #1877F2;
+ }
+
+ .uudai i:nth-child(1),
+
+ .uudai i:nth-child(4) {
+     color: #1877F2;
+     background-color: white;
+     border-radius: 100%;
+ }
+
+ .uudai i:nth-child(3) {
+     color: #EEAB6E;
+ }
+
+ .footer {
+     margin: auto;
+     background-color: #252a36;
+     color: white;
+
+     height: 290px;
+ }
+
+ .footer .list {
+     /* align-items: center; */
+     /* justify-content: space-around; */
+     display: grid;
+     grid-template-columns: 380px 380px auto;
+     grid-column: 20px;
+ }
+
+ .footer .list .item {
+     padding: 40px;
+     text-align: left;
+     margin-left: 50px;
+ }
+
+ .footer .list .item .title {
+     font-size: 25px;
+     margin-bottom: 30px;
+     margin-left: 20px;
+ }
+
+ .footer .list .item ul li a {
+     margin-bottom: 5px;
+     text-decoration: none;
+     color: white;
+ }
+
+ .footer .list .item ul li a:hover {
+     color: #EB3335;
+ }
+
+ .footer .list .item .icon {
+     /* font-size: 40px; */
+     display: flex;
+
+ }
+
+ .footer .list .item .icon img {
+     margin-right: 10px;
+     width: 140px
+ }
+
+ /* admin */
+
+ .productadmin {
+     background-color: #212529;
+     color: white;
+     height: max-content;
+     padding: 40px
+ }
