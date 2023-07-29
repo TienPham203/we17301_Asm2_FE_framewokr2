@@ -8,9 +8,31 @@ import { Routes, Route } from "react-router-dom"
 import Dashbroad from './Page/Admin/DashBroad/Dashbroad'
 import ProductList from './Page/Client/ProductList'
 import Content from './Component/content/content'
+import AddProduct from './Page/Admin/AddProduct/AddProduct'
+import { useSelector } from 'react-redux'
+import UpdateProduct from './Page/Admin/UpdateProduct/UpdateProduct'
+import ProductDetail from './Page/Client/ProductDetail/ProductDetail'
 function App() {
 
+  const { isLoading, error } = useSelector((state: any) => state.products)
 
+
+  // if (isLoading) return <div className="pl">
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__dot"></div>
+  //   <div className="pl__text">Loading…</div>
+  // </div>;
+  if (error) return <div>{error}</div>;
   return (
 
 
@@ -19,12 +41,15 @@ function App() {
         <Route path="/" element={<HomePage />} >
           <Route index element={<Content />} />
           <Route path='productlist' element={<ProductList />} />
+          <Route path='product-detail' element={<ProductDetail />} />
         </Route>
 
 
 
         <Route path='/admin/' element={<Dashbroad />}>
           <Route index element={<ProductListAdmin />} />
+          <Route path='addproduct' element={<AddProduct />} />
+          <Route path='product/:id' element={<UpdateProduct />} />
         </Route>
 
 

@@ -2,8 +2,10 @@ import { Dispatch, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Button from "../../../Component/Button"
 import { fetchProduct } from "../../../action/product"
-import Skeleton from "react-loading-skeleton"
+
 import { instance } from "../../../axios/config"
+import { pause } from "../../../pause/pause"
+import { Link } from "react-router-dom"
 
 
 const ProductListAdmin = () => {
@@ -17,20 +19,37 @@ const ProductListAdmin = () => {
 
     const onRemove = async (_id: any) => {
         try {
-            const product = await instance.delete(`/products/${_id}`)
-            dispatch({ type: 'product/delete', payload: product })
-            dispatch(fetchProduct())
+            await pause(1200)
+            if (confirm('Có muốn xóa ?') == true) {
+                const product = await instance.delete(`/products/${_id}`)
+                dispatch({ type: 'product/delete', payload: product })
+                dispatch(fetchProduct())
+                alert("Đã xóa")
+            }
+            else {
+                alert("Đã hủy xóa")
+            }
+
+
         } catch (error) {
 
         }
     }
 
-    if (isLoading) return <Skeleton count={3} height={35} />;
+    if (isLoading) return <div id="loader">
+        <div className="ls-particles ls-part-1"></div>
+        <div className="ls-particles ls-part-2"></div>
+        <div className="ls-particles ls-part-3"></div>
+        <div className="ls-particles ls-part-4"></div>
+        <div className="ls-particles ls-part-5"></div>
+        <div className="lightsaber ls-left ls-green"></div>
+        <div className="lightsaber ls-right ls-red"></div>
+    </div>
     if (error) return <div>{error}</div>;
     return (
-        <div className="productadmin">
-            <h1 className="text-center">Products Maneger</h1>
-            <table className=" container table table-dark border">
+        <div className="productadmin bg-white">
+            <h1 className="text-center text-dark">Products Maneger</h1>
+            <table className=" container table text-dark border">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -54,14 +73,17 @@ const ProductListAdmin = () => {
                             <td>{item.desc}</td>
                             <td>{item.star}</td>
                             <td>
-                                <Button type="danger" onClick={() => onRemove(item._id)}>Xóa</Button>
-                                <Button type="primary">Sửa</Button>
+                                <Button type="danger" onClick={() => onRemove(item._id)}><i className="fa-solid fa-trash"></i></Button>
+                                <Button type="primary"><Link to={`/admin/product/${item?._id}`}><i className="fa-solid fa-wrench text-light"></i></Link></Button>
                             </td>
                         </tr>
                     })}
 
                 </tbody>
-            </table></div>
+            </table>
+
+            <Button type="primary"> <a href="/admin/addproduct"><i className="text-light fa-solid fa-plus"></i></a></Button>
+        </div>
 
     )
 }

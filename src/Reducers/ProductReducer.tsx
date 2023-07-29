@@ -21,16 +21,22 @@ const ProductReducer = (state = initialState, action: any) => {
             case 'product/fetchingFinally':
                 draftState.isLoading = false
                 return;
+
+            case 'product/fetchOne':
+                const _id = action.payload
+                draftState.products = draftState.products.filter((item: any) => item.id === _id)
+                return
             case 'product/add':
                 draftState.products.push(action.payload)
                 return
+
             case 'product/delete':
                 const id = action.payload
                 draftState.products = draftState.products.filter((item: any) => item.id !== id)
                 return
             case 'product/update':
                 const product = action.payload
-                draftState.products = draftState.products.map((item: any) => item.id ? product : item)
+                draftState.products = draftState.products.map((item: any) => item._id ? product : item)
                 return
             default:
                 break;

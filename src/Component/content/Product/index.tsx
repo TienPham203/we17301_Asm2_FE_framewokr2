@@ -10,6 +10,8 @@ const Product = () => {
     useEffect(() => {
         dispatch(fetchProduct())
     }, [])
+    const sale = document.querySelector('sale-off')
+
     return (
 
         <div className="product">
@@ -18,11 +20,11 @@ const Product = () => {
             </div>
             <div className="list">
                 {products?.map((item: any) => {
-                    return (<div key={item.id} className="item mt-4 ">
 
+                    return (<div key={item.id} className="item mt-4 ">
                         <div className="small-item">
 
-                            <div className="sale-off  text-light rounded-xl  bg-red-500 text-xl">- {Math.floor((item?.sale - item.price) / item?.sale * 100)}%</div>
+                            <div className="sale-off  text-light rounded-xl  bg-red-500 text-xl"> {!item.sale ? '' : '-' + Math.floor((item?.sale - item.price) / item?.sale * 100) + '%'}</div>
                             <div className="img">
                                 <img src={item?.image} alt="" />
                             </div>
@@ -34,6 +36,7 @@ const Product = () => {
                                     <i className="fa-regular fa-star"></i>
                                     <i className="fa-regular fa-star"></i>
                                     <i className="fa-regular fa-star"></i>
+
 
                                 </div>
                                 <div className="flex justify-between ">

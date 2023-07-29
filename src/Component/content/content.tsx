@@ -9,6 +9,7 @@ import Uudai from "./uudai/Uudai"
 const Content = () => {
     return (
         <div className="content">
+
             <div className="service">
                 <Service></Service>
             </div>
