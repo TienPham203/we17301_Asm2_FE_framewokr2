@@ -4,6 +4,7 @@ import { legacy_createStore as createStore, combineReducers, compose, applyMiddl
 
 import thunk from "redux-thunk"
 import ProductReducer from '../Reducers/ProductReducer';
+import { createReducer } from '@reduxjs/toolkit';
 
 const composeEnhancers =
     typeof window === 'object' && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -18,6 +19,7 @@ const enhancer = composeEnhancers(
 );
 const rootReducer = combineReducers({
     products: ProductReducer,
+    cart: createReducer,
 })
 
 const store = createStore(rootReducer, enhancer)

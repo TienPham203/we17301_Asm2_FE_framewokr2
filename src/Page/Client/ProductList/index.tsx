@@ -2,6 +2,8 @@ import { Dispatch, useEffect } from "react"
 import Button from "../../../Component/Button"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchProduct } from "../../../action/product"
+import { Link } from "react-router-dom"
+// import { add } from "../../../Slice/cart"
 
 
 const ProductList = () => {
@@ -20,7 +22,7 @@ const ProductList = () => {
             <div className="list">
                 {products?.map((item: any) => {
                     return <div key={item.id} className="item mt-4">
-                        <a href={`products/${item._id}`}>
+                        <Link to={`/products/${item._id}/product-detail`}>
                             <div className="small-item">
                                 <div className="sale-off  text-light rounded-xl  bg-red-500 text-xl"> {!item.sale ? '' : '-' + Math.floor((item?.sale - item.price) / item?.sale * 100) + '%'}</div>
                                 <div className="img">
@@ -42,12 +44,12 @@ const ProductList = () => {
                                             <div className="">$ {item?.price}</div>
                                         </div>
                                         <div className="button">
-                                            <Button>Buy Now</Button>
+                                            <Button >Add to cart</Button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 })}
 

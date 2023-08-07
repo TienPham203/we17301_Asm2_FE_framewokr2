@@ -250,7 +250,7 @@
  }
 
 
- .product .list .small-item img {
+ /* .product .list .small-item img {
      transition: ease 0.5s;
  }
 
@@ -258,7 +258,7 @@
 
      transition: ease 0.5s;
      transform: scale(1.25);
- }
+ } */
 
  .product .list .small-item del {
      color: white;
@@ -313,6 +313,24 @@
      text-decoration: none;
      color: white;
      font-weight: bold;
+ }
+
+ .product .list .item .button Button {
+     transform: translate(0, 50px);
+     opacity: 0;
+     transition: all 0.5s;
+
+ }
+
+ .product .list .item:hover .button Button {
+     transform: translate(0, 0);
+     opacity: 1;
+     transition: all 0.5s;
+
+ }
+
+ .product .list .item {
+     overflow: hidden;
  }
 
  .mkt {
@@ -1240,4 +1258,67 @@
          -webkit-transform: rotateZ(65deg) translateY(-35px);
          transform: rotateZ(65deg) translateY(-35px);
      }
+ }
+
+
+ /* product-detail */
+
+
+ .product-detail .image img {
+     position: relative;
+     border-radius: 5px;
+     /* box-shadow: 5px 5px 5px gray; */
+     transition: all 0.5s;
+ }
+
+ .product-detail .image:hover img {
+     transform: scale(1.25);
+     transition: all 0.5s;
+ }
+
+ .product-detail .sale-persent {
+     position: absolute;
+     background-color: #EB3335;
+     color: white;
+     padding: 5px;
+     border-radius: 5px;
+     transform: translate(450px, 50px);
+ }
+
+ .product-detail .addtocart button {
+     padding: 10px 20px;
+     background-color: #EB3335;
+     color: white;
+     border-radius: 10px;
+     font-weight: bold;
+ }
+
+ .product-detail .commit {
+     font-weight: 600;
+     margin-left: 10px;
+ }
+
+ .product-detail .share {
+     display: flex;
+     /* align-items: center; */
+
+ }
+
+ .product-detail .share i {
+     font-size: 20px;
+ }
+
+ .product-detail .title p {
+     border-radius: 10px;
+     background-color: #EB3335;
+     color: white;
+     padding: 10px 10px;
+     width: 105px;
+     font-weight: 600;
+     box-shadow: 5px 5px 5px rgb(219, 217, 217);
+ }
+
+ .product-detail .content-detail {
+     color: gray;
+     margin-bottom: 150px;
  }

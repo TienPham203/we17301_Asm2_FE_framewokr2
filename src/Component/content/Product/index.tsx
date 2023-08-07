@@ -2,6 +2,7 @@ import { Dispatch, useEffect } from "react"
 import Button from "../../Button"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchProduct } from "../../../action/product"
+import { Link } from "react-router-dom"
 
 
 const Product = () => {
@@ -10,7 +11,7 @@ const Product = () => {
     useEffect(() => {
         dispatch(fetchProduct())
     }, [])
-    const sale = document.querySelector('sale-off')
+
 
     return (
 
@@ -22,35 +23,42 @@ const Product = () => {
                 {products?.map((item: any) => {
 
                     return (<div key={item.id} className="item mt-4 ">
-                        <div className="small-item">
 
-                            <div className="sale-off  text-light rounded-xl  bg-red-500 text-xl"> {!item.sale ? '' : '-' + Math.floor((item?.sale - item.price) / item?.sale * 100) + '%'}</div>
-                            <div className="img">
-                                <img src={item?.image} alt="" />
-                            </div>
-                            <div className="back">
-                                <a href="">{item?.name}</a>
-                                <div className="statr">
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
+                        <a className='text-decoration-none text-white' href={`products/${item._id}/product-detail`} >
+                            <div className="small-item">
 
-
+                                <div className="sale-off  text-light rounded-xl  bg-red-500 text-xl"> {!item.sale ? '' : '-' + Math.floor((item?.sale - item.price) / item?.sale * 100) + '%'}</div>
+                                <div className="img">
+                                    <img src={item?.image} alt="" />
                                 </div>
-                                <div className="flex justify-between ">
-                                    <div className="price">
-                                        <div className="sale"><del>{item?.sale}</del></div>
-                                        <div className="">${item?.price}</div>
+                                <div className="back">
+                                    <a href="">{item?.name}</a>
+                                    <div className="statr">
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+
+
                                     </div>
-                                    <div className="button">
-                                        <Button>Buy Now</Button>
+                                    <div className="flex justify-between ">
+                                        <div className="price">
+                                            <div className="sale"><del>{item?.sale}</del></div>
+                                            <div className="">${item?.price}</div>
+                                        </div>
+                                        <div className="button">
+                                            <Button>Buy Now</Button>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
-                        </div>
-                    </div>)
+
+                        </a>
+
+                    </div>
+                    )
                 })}
 
                 {/* <div className="item">

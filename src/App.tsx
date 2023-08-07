@@ -12,9 +12,10 @@ import AddProduct from './Page/Admin/AddProduct/AddProduct'
 import { useSelector } from 'react-redux'
 import UpdateProduct from './Page/Admin/UpdateProduct/UpdateProduct'
 import ProductDetail from './Page/Client/ProductDetail/ProductDetail'
+// import Cart from "./Component/Cart/Cart"
 function App() {
 
-  const { isLoading, error } = useSelector((state: any) => state.products)
+  const { products, isLoading, error } = useSelector((state: any) => state.products)
 
 
   // if (isLoading) return <div className="pl">
@@ -41,7 +42,8 @@ function App() {
         <Route path="/" element={<HomePage />} >
           <Route index element={<Content />} />
           <Route path='productlist' element={<ProductList />} />
-          <Route path='product-detail' element={<ProductDetail />} />
+          <Route path='/products/:id/product-detail' element={<ProductDetail />} />
+          {/* <Route path='cart' element={<Cart />}></Route> */}
         </Route>
 
 
@@ -49,7 +51,7 @@ function App() {
         <Route path='/admin/' element={<Dashbroad />}>
           <Route index element={<ProductListAdmin />} />
           <Route path='addproduct' element={<AddProduct />} />
-          <Route path='product/:id' element={<UpdateProduct />} />
+          <Route path='products/:_id/update' element={<UpdateProduct />} />
         </Route>
 
 

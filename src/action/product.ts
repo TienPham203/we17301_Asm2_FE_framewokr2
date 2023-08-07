@@ -5,11 +5,11 @@ export const fetchProduct = () => async (dispatch: any) => {
 
     dispatch({ type: "product/fetching" })
     try {
-        await pause(3000)
+        await pause(1500)
 
         const { data } = await instance.get('products')
         await dispatch({ type: "product/fetchingSuccess", payload: data.data })
-        // console.log(data.data);
+
 
 
     } catch (error: any) {
@@ -18,20 +18,17 @@ export const fetchProduct = () => async (dispatch: any) => {
         await dispatch({ type: "product/fetchingFinally" })
     }
 }
-export const fetchOneProduct = () => async (dispatch: any) => {
 
-    try {
+// export const fetchOneProduct = () => async (dispatch: any) => {
+//     console.log("id", id);
 
-        const { _id }: any = useParams()
-        const { data } = await instance.get(`products/${_id}`)
-        await dispatch({ type: "product/fetchOne", payload: data })
+//     try {
+//         const data = await instance.get(`products/${_id}`)
+//         console.log(data);
+//         // await dispatch({ type: 'product/fetchOne', payload: data })
 
 
+//     } catch (error) {
 
-
-    } catch (error: any) {
-        // await dispatch({ type: "product/fetchingErrror", payload: error.message })
-    } finally {
-        // await dispatch({ type: "product/fetchingFinally" })
-    }
-}
+//     }
+// }
